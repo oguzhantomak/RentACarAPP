@@ -40,6 +40,11 @@
             this.cmbCarSelection = new MetroFramework.Controls.MetroComboBox();
             this.imgCars = new System.Windows.Forms.ImageList(this.components);
             this.pbCarImage = new System.Windows.Forms.PictureBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.lblTotalCost = new MetroFramework.Controls.MetroLabel();
+            this.btnRent = new MetroFramework.Controls.MetroTile();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.lblTotalDays = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,12 +52,15 @@
             // 
             this.cmbPickUp.FormattingEnabled = true;
             this.cmbPickUp.ItemHeight = 23;
+            this.cmbPickUp.Items.AddRange(new object[] {
+            "İstanbul Havalimanı",
+            "Maslak",
+            "Beşiktaş"});
             this.cmbPickUp.Location = new System.Drawing.Point(24, 106);
             this.cmbPickUp.Name = "cmbPickUp";
             this.cmbPickUp.Size = new System.Drawing.Size(176, 29);
             this.cmbPickUp.TabIndex = 0;
             this.cmbPickUp.UseSelectable = true;
-            this.cmbPickUp.SelectedIndexChanged += new System.EventHandler(this.cmbPickUp_SelectedIndexChanged);
             // 
             // metroLabel1
             // 
@@ -62,18 +70,20 @@
             this.metroLabel1.Size = new System.Drawing.Size(104, 19);
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "Pick up Location";
-            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // cmbDropOff
             // 
             this.cmbDropOff.FormattingEnabled = true;
             this.cmbDropOff.ItemHeight = 23;
+            this.cmbDropOff.Items.AddRange(new object[] {
+            "İstanbul Havalimanı",
+            "Maslak",
+            "Beşiktaş"});
             this.cmbDropOff.Location = new System.Drawing.Point(223, 106);
             this.cmbDropOff.Name = "cmbDropOff";
             this.cmbDropOff.Size = new System.Drawing.Size(176, 29);
             this.cmbDropOff.TabIndex = 0;
             this.cmbDropOff.UseSelectable = true;
-            this.cmbDropOff.SelectedIndexChanged += new System.EventHandler(this.cmbDropOff_SelectedIndexChanged);
             // 
             // metroLabel2
             // 
@@ -83,7 +93,6 @@
             this.metroLabel2.Size = new System.Drawing.Size(115, 19);
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Drop Off Location";
-            this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
             // dtPickUp
             // 
@@ -92,7 +101,6 @@
             this.dtPickUp.Name = "dtPickUp";
             this.dtPickUp.Size = new System.Drawing.Size(176, 29);
             this.dtPickUp.TabIndex = 2;
-            this.dtPickUp.ValueChanged += new System.EventHandler(this.dtPickUp_ValueChanged);
             // 
             // dtDropOff
             // 
@@ -101,7 +109,6 @@
             this.dtDropOff.Name = "dtDropOff";
             this.dtDropOff.Size = new System.Drawing.Size(176, 29);
             this.dtDropOff.TabIndex = 2;
-            this.dtDropOff.ValueChanged += new System.EventHandler(this.dtDropOff_ValueChanged);
             // 
             // metroLabel3
             // 
@@ -111,7 +118,6 @@
             this.metroLabel3.Size = new System.Drawing.Size(86, 19);
             this.metroLabel3.TabIndex = 3;
             this.metroLabel3.Text = "Car Selection";
-            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // cmbCarSelection
             // 
@@ -129,7 +135,6 @@
             this.cmbCarSelection.Size = new System.Drawing.Size(375, 29);
             this.cmbCarSelection.TabIndex = 4;
             this.cmbCarSelection.UseSelectable = true;
-            this.cmbCarSelection.SelectedIndexChanged += new System.EventHandler(this.cmbCarSelection_SelectedIndexChanged);
             this.cmbCarSelection.SelectedValueChanged += new System.EventHandler(this.cmbCarSelection_SelectedValueChanged);
             // 
             // imgCars
@@ -151,13 +156,65 @@
             this.pbCarImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbCarImage.TabIndex = 5;
             this.pbCarImage.TabStop = false;
-            this.pbCarImage.Click += new System.EventHandler(this.pbCarImage_Click);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(406, 84);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(71, 19);
+            this.metroLabel4.TabIndex = 6;
+            this.metroLabel4.Text = "Total Cost:";
+            // 
+            // lblTotalCost
+            // 
+            this.lblTotalCost.AutoSize = true;
+            this.lblTotalCost.Location = new System.Drawing.Point(580, 84);
+            this.lblTotalCost.Name = "lblTotalCost";
+            this.lblTotalCost.Size = new System.Drawing.Size(186, 19);
+            this.lblTotalCost.TabIndex = 7;
+            this.lblTotalCost.Text = "Please complete all the fields !";
+            // 
+            // btnRent
+            // 
+            this.btnRent.ActiveControl = null;
+            this.btnRent.Location = new System.Drawing.Point(24, 294);
+            this.btnRent.Name = "btnRent";
+            this.btnRent.Size = new System.Drawing.Size(375, 105);
+            this.btnRent.TabIndex = 8;
+            this.btnRent.Text = "Rent";
+            this.btnRent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRent.UseSelectable = true;
+            this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(406, 65);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel5.TabIndex = 6;
+            this.metroLabel5.Text = "Total Days:";
+            // 
+            // lblTotalDays
+            // 
+            this.lblTotalDays.AutoSize = true;
+            this.lblTotalDays.Location = new System.Drawing.Point(580, 65);
+            this.lblTotalDays.Name = "lblTotalDays";
+            this.lblTotalDays.Size = new System.Drawing.Size(186, 19);
+            this.lblTotalDays.TabIndex = 7;
+            this.lblTotalDays.Text = "Please complete all the fields !";
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 422);
+            this.Controls.Add(this.btnRent);
+            this.Controls.Add(this.lblTotalDays);
+            this.Controls.Add(this.lblTotalCost);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.pbCarImage);
             this.Controls.Add(this.cmbCarSelection);
             this.Controls.Add(this.metroLabel3);
@@ -170,6 +227,7 @@
             this.Name = "MainMenu";
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCarImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,5 +246,10 @@
         private MetroFramework.Controls.MetroComboBox cmbCarSelection;
         private System.Windows.Forms.ImageList imgCars;
         private System.Windows.Forms.PictureBox pbCarImage;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel lblTotalCost;
+        private MetroFramework.Controls.MetroTile btnRent;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel lblTotalDays;
     }
 }

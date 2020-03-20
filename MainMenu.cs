@@ -24,7 +24,7 @@ namespace RentACar
             switch (valx)
             {
                 case 0:
-                    pbCarImage.Image = Image.FromFile("Images//m.jpg");
+                    pbCarImage.Image = imgCars.Images[3];
                     break;
                 case 1:
                     pbCarImage.Image = imgCars.Images[2];
@@ -46,51 +46,40 @@ namespace RentACar
             }
         }
 
-
-
-        private void cmbPickUp_SelectedIndexChanged(object sender, EventArgs e)
+        private void MainMenu_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void metroLabel1_Click(object sender, EventArgs e)
+        private void btnRent_Click(object sender, EventArgs e)
         {
+            DateTime pDate = dtPickUp.Value;
+            DateTime dDate = dtDropOff.Value;
+            TimeSpan day = dDate - pDate;
+            int aralik = Convert.ToInt32(day.TotalDays)+1;
 
-        }
+            if (cmbCarSelection.SelectedIndex==0)
+            {
+                int a180 = 250;
+                lblTotalCost.Text =(a180 * aralik).ToString()+"TL";
+                lblTotalDays.Text = aralik.ToString() + "GÜN";
+            }
+            else if (cmbCarSelection.SelectedIndex==1)
+            {
+                int i10 = 135;
+                lblTotalCost.Text = (i10 * aralik).ToString() + "TL";
+                lblTotalDays.Text = aralik.ToString() + "GÜN";
+            }
+            else if (cmbCarSelection.SelectedIndex==2)
+            {
+                int vwPolo = 175;
+                lblTotalCost.Text = (vwPolo * aralik).ToString() + "TL";
+                lblTotalDays.Text = aralik.ToString() + "GÜN";
+            }
+            else if (true)
+            {
 
-        private void cmbDropOff_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtPickUp_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtDropOff_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbCarSelection_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pbCarImage_Click(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }
